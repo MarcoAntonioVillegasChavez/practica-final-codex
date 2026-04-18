@@ -1,0 +1,107 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background-color: #f3f4f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #eef2ff, #f9fafb 45%);
+}
+
+.container {
+  width: min(92vw, 440px);
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+h1 {
+  margin: 0;
+  color: #111827;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+}
+
+form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+label {
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 0.7rem 0.85rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+button {
+  margin-top: 0.35rem;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem;
+  background: #4f46e5;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4338ca;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.8;
+}
+
+.message {
+  min-height: 1.35rem;
+  margin: 0.25rem 0 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.message.error {
+  color: #b91c1c;
+}
+
+.message.success {
+  color: #166534;
+}
+
+.hint {
+  display: block;
+  margin-top: 1rem;
+  color: #6b7280;
+}
