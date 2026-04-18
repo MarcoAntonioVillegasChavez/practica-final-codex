@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card" aria-labelledby="welcome-title">
+        <h1 id="welcome-title">Bienvenido</h1>
+        <p class="subtitle" id="welcome-message"></p>
+        <button id="logout-btn" type="button">Cerrar sesión</button>
+      </section>
+    </main>
+
+    <script>
+      const sessionRaw = localStorage.getItem('session');
+      const messageEl = document.getElementById('welcome-message');
+      const logoutBtn = document.getElementById('logout-btn');
+
+      if (!sessionRaw) {
+        window.location.replace('index.html');
+      } else {
+        const session = JSON.parse(sessionRaw);
+        messageEl.textContent = `Has iniciado sesión como ${session.user}.`;
+      }
+
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('session');
+        window.location.replace('index.html');
+      });
+    </script>
+  </body>
+</html>
